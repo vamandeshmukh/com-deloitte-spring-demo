@@ -6,4 +6,6 @@
 
 	<!-- bean definitions here -->
 
+	<bean id="e1" class="com.deloitte.spring.demo.model.Employee"></bean>
+
 </beans>
