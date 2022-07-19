@@ -1,5 +1,8 @@
 package com.deloitte.spring.demo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -22,7 +25,7 @@ public class App {
 
 		System.out.println("Start");
 
-		ApplicationContext context = new ClassPathXmlApplicationContext();
+		ApplicationContext context = new ClassPathXmlApplicationContext("SpringConfig.xml");
 
 //		Employee emp = new Employee(101, "Sonu", 90000);
 		Employee emp = context.getBean(Employee.class);
