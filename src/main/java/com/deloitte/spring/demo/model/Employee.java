@@ -7,7 +7,7 @@ public class Employee {
 	private double salary;
 
 	public Employee() {
-		super();
+		super(); 
 	}
 
 	public Employee(int employeeId, String firstName, double salary) {
