@@ -6,9 +6,9 @@ public class Employee {
 	private String firstName;
 	private double salary;
 
-	public Employee() {
-		super(); 
-	}
+//	public Employee() {
+//		super(); 
+//	}
 
 	public Employee(int employeeId, String firstName, double salary) {
 		super();
