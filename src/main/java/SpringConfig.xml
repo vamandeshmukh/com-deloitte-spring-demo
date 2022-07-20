@@ -8,7 +8,8 @@
 
 	<!-- property injection / setter injection -->
 
-	<bean id="e1" class="com.deloitte.spring.demo.model.Employee">
+	<bean id="e1" class="com.deloitte.spring.demo.model.Employee"
+		init-method="init" destroy-method="destroy">
 		<property name="employeeId">
 			<value>101</value>
 		</property>
@@ -107,7 +108,7 @@
 	<!-- Constructor injection -->
 
 	<bean id="e5" class="com.deloitte.spring.demo.model.Employee"
-	init-method="init" destroy-method="abc">
+		init-method="init" destroy-method="abc">
 		<constructor-arg>
 			<value>105</value>
 		</constructor-arg>

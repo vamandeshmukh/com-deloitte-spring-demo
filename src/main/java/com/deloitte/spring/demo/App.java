@@ -31,7 +31,8 @@ public class App {
 
 		System.out.println("Start");
 
-		ApplicationContext context = new ClassPathXmlApplicationContext("SpringConfig.xml");
+//		ApplicationContext context = new ClassPathXmlApplicationContext("SpringConfig.xml");
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext("SpringConfig.xml");
 
 //		Employee emp = new Employee(101, "Sonu", 90000); // not needed 
 

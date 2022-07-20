@@ -30,6 +30,17 @@ public class Employee {
 		this.department = department;
 	}
 
+	public void init() {
+		// code before initialization of beans = setting some properties
+		System.out.println("bean initializing...");
+
+	}
+
+	public void destroy() {
+		System.out.println("bean being destroyed...");
+
+	}
+
 	public int getEmployeeId() {
 		return employeeId;
 	}
