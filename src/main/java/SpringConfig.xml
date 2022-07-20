@@ -56,6 +56,18 @@
 
 	<!-- Object injection -->
 
+	<bean id="d1" class="com.deloitte.spring.demo.model.Department">
+		<property name="departmentId">
+			<value>10</value>
+		</property>
+		<property name="departmentName">
+			<value>HR</value>
+		</property>
+		<property name="city">
+			<value>Hyderabad</value>
+		</property>
+	</bean>
+
 	<bean id="e4" class="com.deloitte.spring.demo.model.Employee">
 		<property name="employeeId">
 			<value>102</value>
@@ -75,6 +87,17 @@
 			</list>
 		</property>
 		<property name="department">
+			<bean id="d1" class="com.deloitte.spring.demo.model.Department">
+				<property name="departmentId">
+					<value>10</value>
+				</property>
+				<property name="departmentName">
+					<value>HR</value>
+				</property>
+				<property name="city">
+					<value>Hyderabad</value>
+				</property>
+			</bean>
 		</property>
 	</bean>
 

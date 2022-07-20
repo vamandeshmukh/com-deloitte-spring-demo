@@ -45,8 +45,11 @@ public class App {
 //		System.out.println(emp.toString());
 //		System.out.println(emp2.toString());
 
-		Employee emp3 = context.getBean("e3", Employee.class);
-		System.out.println(emp3.toString());
+//		Employee emp3 = context.getBean("e3", Employee.class);
+//		System.out.println(emp3.toString());
+
+		Employee emp4 = context.getBean("e4", Employee.class);
+		System.out.println(emp4.toString());
 
 		System.out.println("End");
 
