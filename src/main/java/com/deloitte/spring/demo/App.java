@@ -60,6 +60,7 @@ public class App {
 
 		Employee emp5 = context.getBean("e5", Employee.class);
 		System.out.println(emp5.toString());
+		context.registerShutdownHook();
 
 		System.out.println("End");
 
