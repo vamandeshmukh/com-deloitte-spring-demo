@@ -106,7 +106,8 @@
 
 	<!-- Constructor injection -->
 
-	<bean id="e5" class="com.deloitte.spring.demo.model.Employee">
+	<bean id="e5" class="com.deloitte.spring.demo.model.Employee"
+	init-method="init" destroy-method="abc">
 		<constructor-arg>
 			<value>105</value>
 		</constructor-arg>
@@ -117,6 +118,9 @@
 			<value>85000</value>
 		</constructor-arg>
 	</bean>
+
+	<!-- create beans to inject primitives, objects, inner beans with constructor 
+		injection -->
 
 </beans>
 
