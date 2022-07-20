@@ -48,16 +48,25 @@ public class App {
 //		Employee emp3 = context.getBean("e3", Employee.class);
 //		System.out.println(emp3.toString());
 
-		Employee emp4 = context.getBean("e4", Employee.class);
-		Employee emp5 = context.getBean("e4", Employee.class);
-		System.out.println(emp4.toString());
+//		Employee emp4 = context.getBean("e4", Employee.class);
+//		Employee emp5 = context.getBean("e4", Employee.class);
+//		System.out.println(emp4.toString());
+//		System.out.println(emp5.toString());
+//		System.out.println(emp4.hashCode());
+//		System.out.println(emp5.hashCode());
+//		System.out.println(emp4.equals(emp5));
+
+		Employee emp5 = context.getBean("e5", Employee.class);
 		System.out.println(emp5.toString());
-		System.out.println(emp4.hashCode());
-		System.out.println(emp5.hashCode());
-		System.out.println(emp4.equals(emp5));
 
 		System.out.println("End");
 
 	}
 
 }
+
+
+
+
+
+
