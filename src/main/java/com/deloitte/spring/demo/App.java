@@ -26,6 +26,14 @@ import com.deloitte.spring.demo.model.Employee;
 // scope of beans 
 // 
 
+
+// Spring configuration for Java app - 
+// 1. XML based configuration 
+// 2. Java based configuration -> App2.java  
+// 3. Annotation based configuration 
+
+
+//1. XML based configuration 
 public class App {
 
 	public static void main(String[] args) {
