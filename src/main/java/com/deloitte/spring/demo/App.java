@@ -1,8 +1,5 @@
 package com.deloitte.spring.demo;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -36,14 +33,17 @@ public class App {
 		ApplicationContext context = new ClassPathXmlApplicationContext("SpringConfig.xml");
 
 //		Employee emp = new Employee(101, "Sonu", 90000); // not needed 
-		Employee emp = context.getBean(Employee.class);
-		Employee emp2 = context.getBean(Employee.class);
+
+		Employee emp = context.getBean("e1", Employee.class);
+
+		Employee emp2 = context.getBean("e3", Employee.class);
+
 		System.out.println(emp.equals(emp2));
 		System.out.println(emp.hashCode());
 		System.out.println(emp2.hashCode());
 		System.out.println(emp.toString());
 		System.out.println(emp2.toString());
-		emp2.setSalary(95000);
+//		emp2.setSalary(95000);
 		System.out.println(emp.toString());
 		System.out.println(emp2.toString());
 		System.out.println("End");
