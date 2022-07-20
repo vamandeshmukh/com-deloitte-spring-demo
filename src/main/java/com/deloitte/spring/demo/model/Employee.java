@@ -2,6 +2,9 @@ package com.deloitte.spring.demo.model;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Employee {
 
 	private int employeeId;

@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import com.deloitte.spring.demo.model.Department;
 import com.deloitte.spring.demo.model.Employee;
 
-@Configuration
+//@Configuration
 public class SpringConfig {
 
 	@Bean
