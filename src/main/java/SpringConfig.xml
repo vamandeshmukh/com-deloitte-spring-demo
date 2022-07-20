@@ -6,6 +6,8 @@
 
 	<!-- bean definitions here -->
 
+	<!-- property injection / setter injection -->
+
 	<bean id="e1" class="com.deloitte.spring.demo.model.Employee">
 		<property name="employeeId">
 			<value>101</value>
@@ -30,6 +32,8 @@
 		</property>
 	</bean>
 
+	<!-- Collection injection -->
+
 	<bean id="e3" class="com.deloitte.spring.demo.model.Employee">
 		<property name="employeeId">
 			<value>102</value>
@@ -47,6 +51,30 @@
 				<value>Stocks</value>
 				<value>Investment</value>
 			</list>
+		</property>
+	</bean>
+
+	<!-- Object injection -->
+
+	<bean id="e4" class="com.deloitte.spring.demo.model.Employee">
+		<property name="employeeId">
+			<value>102</value>
+		</property>
+		<property name="firstName">
+			<value>Monu</value>
+		</property>
+		<property name="salary">
+			<value>95000</value>
+		</property>
+		<property name="projects">
+			<list>
+				<value>Banking</value>
+				<value>Finance</value>
+				<value>Stocks</value>
+				<value>Investment</value>
+			</list>
+		</property>
+		<property name="department">
 		</property>
 	</bean>
 
