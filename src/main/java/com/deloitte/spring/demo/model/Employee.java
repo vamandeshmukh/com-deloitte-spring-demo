@@ -32,6 +32,7 @@ public class Employee {
 
 	public void init() {
 		// code before initialization of beans = setting some properties
+		this.setDepartment(new Department(20, "L&D", "Pune"));
 		System.out.println("bean initializing...");
 
 	}
