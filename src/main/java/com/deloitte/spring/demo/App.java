@@ -3,6 +3,7 @@ package com.deloitte.spring.demo;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import com.deloitte.spring.demo.model.Employee;
 
@@ -32,9 +33,10 @@ public class App {
 		System.out.println("Start");
 
 //		ApplicationContext context = new ClassPathXmlApplicationContext("SpringConfig.xml");
-		AbstractApplicationContext context = new ClassPathXmlApplicationContext("SpringConfig.xml");
+//		AbstractApplicationContext context = new ClassPathXmlApplicationContext("SpringConfig.xml");
+		ApplicationContext context = new FileSystemXmlApplicationContext("SpringConfig.xml");
 
-//		Employee emp = new Employee(101, "Sonu", 90000); // not needed 
+		// Employee emp = new Employee(101, "Sonu", 90000); // not needed
 
 //		Employee emp = context.getBean("e1", Employee.class);
 //		Employee emp2 = context.getBean("e3", Employee.class);
@@ -60,7 +62,7 @@ public class App {
 
 		Employee emp5 = context.getBean("e5", Employee.class);
 		System.out.println(emp5.toString());
-		context.registerShutdownHook();
+//		context.registerShutdownHook();
 
 		System.out.println("End");
 
