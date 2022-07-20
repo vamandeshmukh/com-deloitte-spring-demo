@@ -68,7 +68,8 @@
 		</property>
 	</bean>
 
-	<bean id="e4" class="com.deloitte.spring.demo.model.Employee">
+	<bean id="e4" class="com.deloitte.spring.demo.model.Employee"
+		scope="prototype">
 		<property name="employeeId">
 			<value>102</value>
 		</property>
