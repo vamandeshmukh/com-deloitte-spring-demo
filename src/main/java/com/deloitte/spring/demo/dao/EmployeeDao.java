@@ -54,6 +54,29 @@ public class EmployeeDao {
 		return empData;
 	}
 
+	public List<Employee> findEmployeesByFirstName(String firstName) {
+		String sqlQuery = "SELECT * FROM employee WHERE first_name = ? ORDER BY employee_id";
+		List<Employee> empList = this.jdbcTemplate.query(sqlQuery, (resultSet, rowNum) -> {
+			Employee emp = new Employee();
+			emp.setEmployeeId(resultSet.getInt("employee_id"));
+			emp.setFirstName(resultSet.getString("first_name"));
+			emp.setSalary(resultSet.getDouble("salary"));
+			return emp;
+		}, firstName);
+		return empList;
+	}
+
+	public Employee updateEmployeeFirstName(int employeeId, String firstName) {
+		String sqlQuery = "UPDATE employee SET first_name = ? WHERE employee_id = ?";
+		this.jdbcTemplate.update(sqlQuery, firstName, employeeId);
+		return this.findEmployeeById(employeeId);
+	}
+
+	public int deleteEmployee(int employeeId) {
+		String sqlQuery = "DELETE FROM employee WHERE employee_id = ?";
+		return this.jdbcTemplate.update(sqlQuery, employeeId);
+	}
+
 	// findEmployeeByFirstName
 	// updateEmployee
 	// deleteEmployee

@@ -8,6 +8,10 @@
 
 	<!-- property injection / setter injection -->
 
+	<bean id="empService"
+		class="com.deloitte.spring.demo.service.EmployeeService">
+	</bean>
+
 	<bean id="e1" class="com.deloitte.spring.demo.model.Employee">
 		<property name="employeeId">
 			<value>101</value>
