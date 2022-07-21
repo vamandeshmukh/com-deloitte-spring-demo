@@ -1,5 +1,7 @@
 package com.deloitte.spring.demo.model;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -7,14 +9,27 @@ import org.springframework.stereotype.Component;
 @Component
 public class Employee {
 
-	private int employeeId;
-	private String firstName;
-	private double salary;
-	private List<String> projects;
-	private Department department;
+//	private int employeeId;
+//	private String firstName;
+//	private double salary;
+//	private List<String> projects;
+//	private Department department;
+
+	private int employeeId = 101;
+	private String firstName = "Sonu";
+	private double salary = 90000;
+	private List<String> projects = new ArrayList<>(Arrays.asList("One", "Two", "Three"));
+	private Department department = new Department(10, "HR", "Hyderabad");
+
+//	public Employee() {
+//		super();
+//	}
 
 	public Employee() {
 		super();
+		this.employeeId = 102;
+		this.firstName = "Monu";
+		this.salary = 95000;
 	}
 
 	public Employee(int employeeId, String firstName, double salary) {
