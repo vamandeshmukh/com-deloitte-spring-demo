@@ -23,8 +23,18 @@ public class EmployeeDao {
 	public int saveEmployee(Employee emp) {
 		String sql = "INSERT INTO employee (employee_id, first_name, salary) VALUES (" + emp.getEmployeeId() + ",'"
 				+ emp.getFirstName() + "'," + emp.getSalary() + ")";
-
 		return jdbcTemplate.update(sql);
 	}
 
+	public Employee findEmployeeById(Employee emp) {
+		String sqlQuery = "SELECT * FROM employee WHERE employee_id = ?";
+		return jdbcTemplate.queryForObject(sqlQuery ,
+		        (resultSet, rowNum) -> {
+		            Actor newActor = new Actor();
+		            newActor.setFirstName(resultSet.getString("first_name"));
+		            newActor.setLastName(resultSet.getString("last_name"));
+		            return newActor;
+		        },
+		        1212L);;
+	}
 }
