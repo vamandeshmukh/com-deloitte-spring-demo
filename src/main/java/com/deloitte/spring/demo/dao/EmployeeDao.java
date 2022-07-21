@@ -10,8 +10,8 @@ import com.deloitte.spring.demo.model.Employee;
 //salary DOUBLE,
 //CONSTRAINT pk_emp PRIMARY KEY (employee_id));
 
-
 //SELECT * FROM employee;
+
 
 public class EmployeeDao {
 
@@ -24,6 +24,7 @@ public class EmployeeDao {
 	public int saveEmployee(Employee emp) {
 		String sql = "INSERT INTO employee (employee_id) VALUES (" + emp.getEmployeeId() + "','" + emp.getFirstName()
 				+ "','" + emp.getSalary() + ")";
+
 		return jdbcTemplate.update(sql);
 	}
 
