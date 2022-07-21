@@ -27,26 +27,35 @@ public class EmployeeDao {
 	public int saveEmployee(Employee emp) {
 		String sql = "INSERT INTO employee (employee_id, first_name, salary) VALUES (" + emp.getEmployeeId() + ",'"
 				+ emp.getFirstName() + "'," + emp.getSalary() + ")";
-		return jdbcTemplate.update(sql);
+		return this.jdbcTemplate.update(sql);
+	}
+
+	public List<Employee> findAllEmployees() {
+		String sqlQuery = "SELECT * FROM employee ORDER BY employee_id";
+		List<Employee> empList = this.jdbcTemplate.query(sqlQuery, (resultSet, rowNum) -> {
+			Employee emp = new Employee();
+			emp.setEmployeeId(resultSet.getInt("employee_id"));
+			emp.setFirstName(resultSet.getString("first_name"));
+			emp.setSalary(resultSet.getDouble("salary"));
+			return emp;
+		});
+		return empList;
 	}
 
 	public Employee findEmployeeById(int employeeId) {
 		String sqlQuery = "SELECT * FROM employee WHERE employee_id = ?";
-		return jdbcTemplate.queryForObject(sqlQuery, (resultSet, rowNum) -> {
+		Employee empData = this.jdbcTemplate.queryForObject(sqlQuery, (resultSet, rowNum) -> {
 			Employee emp = new Employee();
 			emp.setEmployeeId(resultSet.getInt("employee_id"));
 			emp.setFirstName(resultSet.getString("first_name"));
 			emp.setSalary(resultSet.getDouble("salary"));
 			return emp;
 		}, employeeId);
+		return empData;
 	}
 
-//	findEmployeeByFirstName
-
-//	findAllEmployees
-
-//	updateEmployee
-
-// 	deleteEmployee
+	// findEmployeeByFirstName
+	// updateEmployee
+	// deleteEmployee
 
 }

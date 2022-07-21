@@ -1,5 +1,7 @@
 package com.deloitte.spring.demo;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -20,7 +22,7 @@ public class App4 {
 //		int numberOfRecords = empDao.saveEmployee(empObjToSave);
 //		System.out.println(numberOfRecords + " record(s) inserted.");
 
-		Employee empObj = empDao.findEmployeeById(101);
+		Employee empObj = empDao.findEmployeeById(102);
 		System.out.println(empObj.toString());
 
 		System.out.println("End");
