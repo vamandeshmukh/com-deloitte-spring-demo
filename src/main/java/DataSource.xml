@@ -21,7 +21,7 @@
 		<property name="dataSource" ref="ds"></property>
 	</bean>
 
-	<bean id="edao" class="com.deloitte.spring.demo.dao">
+	<bean id="edao" class="com.deloitte.spring.demo.dao.EmployeeDao">
 		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
 	</bean>
 
