@@ -18,6 +18,10 @@ public class EmployeeService {
 		return empDao.findAllEmployees();
 	}
 
+	public Employee getEmpById(int employeeId) {
+		return empDao.findEmployeeById(employeeId);
+	}
+
 	public List<Employee> getEmpByFirstName(String firstName) {
 		return empDao.findEmployeesByFirstName(firstName);
 	}
