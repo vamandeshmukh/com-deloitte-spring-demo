@@ -37,6 +37,22 @@ public class EmployeeApp {
 			EmployeeApp.selectOptions();
 			break;
 		}
+		case 2: {
+			System.out.println("Please enter employee id to search:");
+			int num = sc.nextInt();
+			Employee emp = empService.getEmpById(num);
+			System.out.println(emp.toString());
+			EmployeeApp.selectOptions();
+			break;
+		}
+		case 3: {
+			System.out.println("Please enter firstName to search:");
+			String firstName = sc.next();
+			List<Employee> empList = empService.getEmpByFirstName(firstName);
+			empList.forEach(e -> System.out.println(e.toString()));
+			EmployeeApp.selectOptions();
+			break;
+		}
 		case 4: {
 			System.out.println("Please enter employee details: \n");
 			System.out.println("Enter employeeId");
@@ -47,6 +63,16 @@ public class EmployeeApp {
 			double salary = sc.nextDouble();
 			int num = empService.addEmp(new Employee(employeeId, firstName, salary));
 			System.out.println(num + " employee added successfully!");
+			EmployeeApp.selectOptions();
+			break;
+		}
+		case 5: {
+			System.out.println("coming soon...");
+			EmployeeApp.selectOptions();
+			break;
+		}
+		case 6: {
+			System.out.println("coming soon...");
 			EmployeeApp.selectOptions();
 			break;
 		}
