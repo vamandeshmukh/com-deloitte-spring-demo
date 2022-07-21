@@ -12,7 +12,6 @@ import com.deloitte.spring.demo.model.Employee;
 
 //SELECT * FROM employee;
 
-
 public class EmployeeDao {
 
 	private JdbcTemplate jdbcTemplate;
@@ -22,8 +21,8 @@ public class EmployeeDao {
 	}
 
 	public int saveEmployee(Employee emp) {
-		String sql = "INSERT INTO employee (employee_id) VALUES (" + emp.getEmployeeId() + "','" + emp.getFirstName()
-				+ "','" + emp.getSalary() + ")";
+		String sql = "INSERT INTO employee (employee_id, first_name, salary) VALUES (" + emp.getEmployeeId() + ",'"
+				+ emp.getFirstName() + "'," + emp.getSalary() + ")";
 
 		return jdbcTemplate.update(sql);
 	}
