@@ -1,5 +1,7 @@
 package com.deloitte.spring.demo.dao;
 
+import java.util.List;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.deloitte.spring.demo.model.Employee;
@@ -11,6 +13,8 @@ import com.deloitte.spring.demo.model.Employee;
 //CONSTRAINT pk_emp PRIMARY KEY (employee_id));
 
 //SELECT * FROM employee;
+
+//https://docs.spring.io/spring-framework/docs/current/reference/html/data-access.html#jdbc
 
 public class EmployeeDao {
 
@@ -26,15 +30,23 @@ public class EmployeeDao {
 		return jdbcTemplate.update(sql);
 	}
 
-	public Employee findEmployeeById(Employee emp) {
+	public Employee findEmployeeById(int employeeId) {
 		String sqlQuery = "SELECT * FROM employee WHERE employee_id = ?";
-		return jdbcTemplate.queryForObject(sqlQuery ,
-		        (resultSet, rowNum) -> {
-		            Actor newActor = new Actor();
-		            newActor.setFirstName(resultSet.getString("first_name"));
-		            newActor.setLastName(resultSet.getString("last_name"));
-		            return newActor;
-		        },
-		        1212L);;
+		return jdbcTemplate.queryForObject(sqlQuery, (resultSet, rowNum) -> {
+			Employee emp = new Employee();
+			emp.setEmployeeId(resultSet.getInt("employee_id"));
+			emp.setFirstName(resultSet.getString("first_name"));
+			emp.setSalary(resultSet.getDouble("salary"));
+			return emp;
+		}, employeeId);
 	}
+
+//	findEmployeeByFirstName
+
+//	findAllEmployees
+
+//	updateEmployee
+
+// 	deleteEmployee
+
 }
